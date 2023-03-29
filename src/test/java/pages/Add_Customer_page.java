@@ -1,23 +1,30 @@
 package pages;
 
 import io.qameta.allure.Step;
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class Add_Customer_page {
 
-
-    @FindBy(xpath = "//html/body/div/div/div[2]/div/div[2]/div/div/form/div[1]/input")
+    public  Add_Customer_page(WebDriver driver){
+        PageFactory.initElements(driver,this);
+    }
+    @FindBy(xpath = "//input[@placeholder='First Name']")
     private WebElement FirstName_input;
 
-    @FindBy(xpath = "//html/body/div/div/div[2]/div/div[2]/div/div/form/div[2]/input")
+    @FindBy(xpath = "//input[@placeholder='Last Name']")
     private WebElement LastName_input;
 
-    @FindBy(xpath = "//html/body/div/div/div[2]/div/div[2]/div/div/form/div[3]/input")
+    @FindBy(xpath = "//input[@placeholder='Post Code']")
     private WebElement PostCode_input;
 
-    @FindBy(xpath = "//html/body/div/div/div[2]/div/div[2]/div/div/form/button")
+    @FindBy(xpath = "//button[@class='btn btn-default']")
     private WebElement addCustomer_button;
+
+
 
     @Step
     public void add_customer(String FN,String LN,String PC){
@@ -25,6 +32,7 @@ public class Add_Customer_page {
         LastName_input.sendKeys(LN);
         PostCode_input.sendKeys(PC);
         addCustomer_button.click();
+
     }
 
 }

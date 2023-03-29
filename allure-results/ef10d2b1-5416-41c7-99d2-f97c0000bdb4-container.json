@@ -1,0 +1,1 @@
+{"uuid":"ef10d2b1-5416-41c7-99d2-f97c0000bdb4","name":"tests.TestsCase.bef_meth","children":["463160b5-c70a-4ca7-ac12-4da165528706"],"description":"","befores":[{"name":"bef_meth","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1680082583397,"stop":1680082584846}],"afters":[],"start":1680082583397,"stop":1680082584846}

@@ -5,9 +5,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 public class Webdriver {
     public static ChromeDriver getChromeDriver() {
-        String path = System.getProperty("user.dir");
-        String chromeDriverPath = path +"tools\\chromedriver.exe";
-        System.setProperty("webdriver.chrome.driver",chromeDriverPath);
+        System.setProperty("webdriver.chrome.driver","H:\\Programming\\Java\\SDET_First_Task\\src\\test\\java\\tools\\chromedriver.exe");
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("--remote-allow-origins=*");
         return new ChromeDriver(chromeOptions);

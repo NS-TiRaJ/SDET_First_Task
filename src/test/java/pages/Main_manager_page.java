@@ -1,28 +1,29 @@
 package pages;
 
 import io.qameta.allure.Step;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import tools.Webdriver;
 
 public class Main_manager_page {
 
+    public Main_manager_page(WebDriver driver){
+        PageFactory.initElements(driver,this);
+    }
     public String pageUrl ="https://www.globalsqa.com/angularJs-protractor/BankingProject/#/manager";
 
     private Webdriver driver;
 
-    @FindBy(xpath = "//html/body/div/div/div[2]/div/div[1]/button[1]")//
+    @FindBy(xpath = "//button[@ng-class='btnClass1']")//
     private WebElement addCustomerButton;
 
-    @FindBy(xpath = "/html/body/div/div/div[2]/div/div[1]/button[2]")//
+    @FindBy(xpath = "//button[@ng-class='btnClass2']")//
     private WebElement OpenAccountButton;
 
-    @FindBy(xpath = "//html/body/div/div/div[2]/div/div[1]/button[3]")//
+    @FindBy(xpath = "//button[@ng-class='btnClass3']")//
     private WebElement CustomersButton;
-
-    public  Main_manager_page(Webdriver driver){
-        this.driver = driver;
-    }
 
     @Step
     public  void Add_Customer(){
@@ -37,4 +38,5 @@ public class Main_manager_page {
     public void Customer(){
         CustomersButton.click();
     }
+
 }
