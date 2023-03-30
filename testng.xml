@@ -3,10 +3,18 @@
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true" name="H:/Programming/Java/SDET_First_Task">
         <classes>
-            <class name="tests.TestsCase">
+            <class name="tests.FirstTestCase">
                 <methods>
                     <include name="addNewCustomer"/>
+                </methods>
+            </class>
+            <class name="tests.SecondTestCase">
+                <methods>
                     <include name="sort"/>
+                </methods>
+            </class>
+            <class name="tests.ThirdTestCase">
+                <methods>
                     <include name="CustomerSearch"/>
                 </methods>
             </class>
