@@ -10,6 +10,7 @@ import pages.Customers_page;
 import pages.Main_manager_page;
 import tools.Webdriver;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 public class SecondTestCase {
@@ -20,7 +21,7 @@ public class SecondTestCase {
     @BeforeTest
     public void bef_test(){
         driver.get(mainManagerPage.pageUrl);
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
     @Test
     @Description("Сортировка клиентов в алфавитном порядке")
@@ -28,6 +29,4 @@ public class SecondTestCase {
         mainManagerPage.Customer();
         customers_page.SortByFirstName();
     }
-    @AfterTest
-    public void TestEnd(){driver.close();}
 }

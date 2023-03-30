@@ -11,6 +11,7 @@ import pages.Customers_page;
 import pages.Main_manager_page;
 import tools.Webdriver;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 @Epic("test")
@@ -22,7 +23,7 @@ public class FirstTestCase {
 @BeforeTest
     public void bef_test(){
         driver.get(mainManagerPage.pageUrl);
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
     @Test
     @Description("Добавление нового клиета")
@@ -31,6 +32,4 @@ public class FirstTestCase {
     add.add_customer("test","test","test");
     driver.switchTo().alert().accept();
     }
-@AfterTest
-    public void TestEnd(){driver.close();}
 }
