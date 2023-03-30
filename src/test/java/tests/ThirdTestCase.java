@@ -2,6 +2,7 @@ package tests;
 
 import jdk.jfr.Description;
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import pages.Add_Customer_page;
@@ -27,5 +28,6 @@ public class ThirdTestCase {
         mainManagerPage.Customer();
         customers_page.Search_Customer("Albus");
     }
-
+   @AfterTest
+    public void TestEnd(){driver.close();}
 }

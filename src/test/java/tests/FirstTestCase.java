@@ -3,6 +3,7 @@ package tests;
 import io.qameta.allure.Epic;
 import jdk.jfr.Description;
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import pages.Add_Customer_page;
@@ -30,5 +31,6 @@ public class FirstTestCase {
     add.add_customer("test","test","test");
     driver.switchTo().alert().accept();
     }
-
+@AfterTest
+    public void TestEnd(){driver.close();}
 }

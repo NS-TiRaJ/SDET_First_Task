@@ -7,7 +7,7 @@ public class Webdriver {
     public static ChromeDriver getChromeDriver() {
         System.setProperty("webdriver.chrome.driver","H:\\Programming\\Java\\SDET_First_Task\\src\\test\\java\\tools\\chromedriver.exe");
         ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("--remote-allow-origins=*");
+        chromeOptions.addArguments("--remote-allow-origins=*","--start-maximized");
         return new ChromeDriver(chromeOptions);
     }
 }
