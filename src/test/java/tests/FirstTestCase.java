@@ -20,7 +20,7 @@ public class FirstTestCase {
     Main_manager_page mainManagerPage = new Main_manager_page(driver);
     Add_Customer_page add = new Add_Customer_page(driver);
     Customers_page customers_page = new Customers_page(driver);
-@BeforeTest
+    @BeforeTest
     public void bef_test(){
         driver.get(mainManagerPage.pageUrl);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
@@ -31,5 +31,8 @@ public class FirstTestCase {
     mainManagerPage.Add_Customer();
     add.add_customer("test","test","test");
     driver.switchTo().alert().accept();
+    mainManagerPage.Customer();
     }
+    @AfterTest
+    public void Close_driver(){driver.close();}
 }

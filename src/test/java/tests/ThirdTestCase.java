@@ -26,7 +26,12 @@ public class ThirdTestCase {
     @Test
     @Description ("Поиск клиента")
     public  void  CustomerSearch(){
+        mainManagerPage.Add_Customer();
+        add.add_customer("test","test","test");
+        driver.switchTo().alert().accept();
         mainManagerPage.Customer();
         customers_page.Search_Customer("Albus");
     }
+    @AfterTest
+    public void Close_driver(){driver.close();}
 }

@@ -5,15 +5,12 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import pages.Add_Customer_page;
 import pages.Customers_page;
 import pages.Main_manager_page;
 import tools.Webdriver;
-
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
-public class SecondTestCase {
+public class FourthTestCase {
     WebDriver driver = Webdriver.getChromeDriver();
     Main_manager_page mainManagerPage = new Main_manager_page(driver);
     Customers_page customers_page = new Customers_page(driver);
@@ -23,10 +20,10 @@ public class SecondTestCase {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
     @Test
-    @Description("Сортировка клиентов в алфавитном порядке")
-    public void sort(){
+    @Description ("Поиск несуществующего клиента")
+    public  void  CustomerSearch(){
         mainManagerPage.Customer();
-        customers_page.SortByFirstName();
+        customers_page.Search_Customer("Lord Voldemort");
     }
     @AfterTest
     public void Close_driver(){driver.close();}
