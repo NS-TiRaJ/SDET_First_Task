@@ -1,0 +1,10 @@
+tests\FirstTestCase.class
+tools\Webdriver.class
+pages\OpenAccountPage.class
+pages\MainManagerPage.class
+tests\SecondTestCase.class
+tests\ThirdTestCase.class
+pages\AddCustomerPage.class
+tests\FourthTestCase.class
+pages\CustomersPage.class
+tests\FifthTestCase.class
