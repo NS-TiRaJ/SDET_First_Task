@@ -5,19 +5,18 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import pages.Add_Customer_page;
-import pages.Customers_page;
-import pages.Main_manager_page;
+import pages.AddCustomerPage;
+import pages.CustomersPage;
+import pages.MainManagerPage;
 import tools.Webdriver;
 
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
 public class ThirdTestCase {
     WebDriver driver = Webdriver.getChromeDriver();
-    Main_manager_page mainManagerPage = new Main_manager_page(driver);
-    Add_Customer_page add = new Add_Customer_page(driver);
-    Customers_page customers_page = new Customers_page(driver);
+    MainManagerPage mainManagerPage = new MainManagerPage(driver);
+    AddCustomerPage addCustomer = new AddCustomerPage(driver);
+    CustomersPage customersPage = new CustomersPage(driver);
     @BeforeTest
     public void bef_test(){
         driver.get(mainManagerPage.pageUrl);
@@ -26,11 +25,11 @@ public class ThirdTestCase {
     @Test
     @Description ("Поиск клиента")
     public  void  CustomerSearch(){
-        mainManagerPage.Add_Customer();
-        add.add_customer("test","test","test");
+        mainManagerPage.addCustomer();
+        addCustomer.addCustomerInfo("test","test","test");
         driver.switchTo().alert().accept();
-        mainManagerPage.Customer();
-        customers_page.Search_Customer("Albus");
+        mainManagerPage.customers();
+        customersPage.searchCustomer("Albus");
     }
     @AfterTest
     public void Close_driver(){driver.close();}
