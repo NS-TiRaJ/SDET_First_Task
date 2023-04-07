@@ -32,5 +32,5 @@ public class ThirdTestCase {
         customersPage.searchCustomer("Albus");
     }
     @AfterTest
-    public void Close_driver(){driver.close();}
+    public void closeDriver(){driver.close();}
 }
